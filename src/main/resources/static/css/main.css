@@ -1,0 +1,157 @@
+body {
+  max-width: 1000px;
+  margin: auto;
+}
+body > div {
+  margin-bottom: 10px;
+}
+
+body > div:nth-child(1) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+body > div:nth-child(1) .left-position img {
+  height: 32px;
+}
+body > div:nth-child(1) .center-position {
+  font-size: 40px;
+  font-weight: 700;
+  color: royalblue;
+}
+body > div:nth-child(1) .right-position {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+body > div:nth-child(2) * {
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+}
+body > div:nth-child(2) table {
+  width: 100%;
+  font-weight: 700;
+  text-align: center;
+}
+body > div:nth-child(2) table thead {
+  background-color: #eee;
+}
+body > div:nth-child(2) table thead th {
+  color: tomato;
+}
+body > div:nth-child(2) table tbody th {
+  color: orange;
+}
+body > div:nth-child(2) table tfoot {
+  background-color: #eee;
+}
+body > div:nth-child(2) table tfoot th {
+  color: royalblue;
+}
+
+body > div:nth-child(3) {
+  display: grid;
+  grid-template-columns: 1fr 2fr
+}
+
+body > div:nth-child(3) .left-position {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  font-weight: 700;
+  text-shadow: 3px 3px 3px #aaa;
+}
+
+body > div:nth-child(3) .left-position .head {
+  font-size: 40px;
+  color: tomato;
+  margin-bottom: 10px;
+}
+body > div:nth-child(3) .left-position .body span {
+  color: red;
+}
+body > div:nth-child(3) .left-position .foot {
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+body > div:nth-child(3) .right-position {
+  position: relative;
+}
+
+body > div:nth-child(3) .right-position img {
+  width: 100%;
+}
+
+body > div:nth-child(3) .right-position .head {
+  font-size: 24px;
+  color: #fff;
+  text-shadow: 1px 1px 3px royalblue;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+body > div:nth-child(3) .right-position .time {
+  color: #fff;
+  text-shadow: 1px 1px 3px royalblue;
+  position: absolute;
+  top: 40px;
+  right: 10px;
+}
+
+body > div:nth-child(3) .right-position .area-list > * {
+  color: #fff;
+  background-color: rgba(255, 165, 0, 0.5);
+  text-shadow: 1px 1px 3px royalblue;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+body > div:nth-child(3) .right-position .observation-list > * {
+  position: absolute;
+}
+body > div:nth-child(3) .right-position .observation-list * {
+  font-size: 12px;
+  text-align: center;
+  background-color:#fff;
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+}
+body > div:nth-child(3) .right-position .observation-list tr:nth-child(1) * {
+  background-color: orange;
+}
+body > div:nth-child(3) .right-position .observation-list .compass {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #ccc;
+  border-radius: 50px;
+  background-color: #eee;
+  position: relative;
+}
+body > div:nth-child(3) .right-position .observation-list .compass *:nth-child(1) {
+  position: absolute;
+  border: 5px solid transparent;
+  border-bottom-color: red;
+  background-color: transparent;
+  left: 50%;
+  transform: translate(-50%);
+}
+body > div:nth-child(3) .right-position .observation-list .compass *:nth-child(2) {
+  position: absolute;
+  height: 35px;
+  border: 1px solid red;
+  background-color: transparent;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+body > div:nth-child(3) .right-position .observation-list span {
+  font-weight: bold;
+  color: green;
+  border: none;
+}

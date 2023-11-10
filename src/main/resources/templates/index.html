@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>DL케미칼 방재센터</title>
+  <link rel="stylesheet" href="../static/css/main.css" th:href="@{./css/main.css}">
+</head>
+<body>
+<div>
+  <div class="left-position"><img src="../static/images/DL케미칼 로고.svg" th:src="@{./images/DL케미칼 로고.svg}" alt="DL케미칼 로고" ></div>
+  <div class="center-position">작업자 출입 현황</div>
+  <div class="right-position">2023. 8. 5. 10:39 현재</div>
+</div>
+<div>
+  <table>
+    <thead>
+    <tr><th rowspan="2">구분</th><th colspan="3">DLC 작업자</th><th colspan="3">PMC 작업자</th><th colspan="3">합계</th></tr>
+    <tr><th>입문</th><th>출문</th><th>잔여</th><th>입문</th><th>출문</th><th>잔여</th><th>입문</th><th>출문</th><th>잔여</th></tr>
+    </thead>
+    <tbody>
+    <tr th:if="false"><th>HDPE공장</th><td>6</td><td>0</td><td>6</td><td>0</td><td>0</td><td>0</td><td>6</td><td>0</td><td>6</td></tr>
+    <tr th:if="false"><th>LHDPE공장</th><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+    <tr th:if="false"><th>PB공장</th><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+    <tr th:if="false"><th>C4공장</th><td>4</td><td>4</td><td>0</td><td>0</td><td>0</td><td>0</td><td>4</td><td>4</td><td>0</td></tr>
+    <tr th:each="item : ${inoutStatus.list}"><th th:text="${item.name}"></th><td th:text="${item.dlc_in}"></td><td th:text="${item.dlc_out}"></td><td th:text="${item.dlc_in-item.dlc_out}"></td><td th:text="${item.pmc_in}"></td><td th:text="${item.pmc_out}"></td ><td th:text="${item.pmc_in-item.pmc_out}"></td><td th:text="${item.dlc_in+item.pmc_in}"></td><td th:text="${item.dlc_out+item.pmc_out}"></td><td th:text="${(item.dlc_in+item.pmc_in)-(item.dlc_out+item.pmc_out)}"></td></tr>
+    </tbody>
+    <tfoot>
+    <tr th:if="false"><th>계</th><td>11</td><td>5</td><td>6</td><td>0</td><td>0</td><td>0</td><td>11</td><td>5</td><td>6</td></tr>
+    <tr><th></th>계<td th:text="${inoutStatus.totalDlcin}">11</td><td th:text="${inoutStatus.totalDlcout}">5</td><td th:text="${inoutStatus.totalPmcin}">6</td><td th:text="${inoutStatus.totalPmcout}">0</td><td>0</td><td>0</td><td>11</td><td>5</td><td>6</td></tr>
+    </tfoot>
+  </table>
+</div>
+<div>
+  <div class="left-position">
+    <div class="head">무재해 기록판</div>
+    <div class="body">
+      <div>목표 &nbsp; <span>1460</span> &nbsp; 일</div>
+      <div>현재 &nbsp; <span>1291</span> &nbsp; 일</div>
+    </div>
+    <div class="foot">최근 환원일: <span>2020년 1월 21일</span></div>
+  </div>
+  <div class="right-position">
+    <div class="head">자동 기상관측 시스템</div>
+    <div class="time">2023-08-05 10:39 현재</div>
+    <div class="area-list">
+      <div style="left: 50%; top: 30%;">C4</div>
+      <div style="left: 80%; top: 35%;">LHDPE</div>
+      <div style="left: 50%; top: 70%;">PB</div>
+      <div style="left: 30%; top: 45%;">HDPE</div>
+    </div>
+    <div class="observation-list">
+      <table style="left: 5%; top: 5%;">
+        <tr><th colspan="3">여수공장(실측)</th></tr>
+        <tr><th rowspan="5"><div class="compass" style="transform: rotate(45deg);"><div></div><div></div></div></th><th>풍속</th><td><span>2.4</span> m/s</td></tr>
+        <tr><th>온도</th><td><span>32.9</span> °C</td></tr>
+        <tr><th>강수량</th><td><span>0.0</span> mm</td></tr>
+        <tr><th>미세먼지</th><td><span>11.3</span> μg/m²</td></tr>
+        <tr><th>초미세먼지</th><td><span>0.0</span> μg/m²</td></tr>
+      </table>
+      <table style="left: 70%; top: 50%;">
+        <tr><th colspan="3">삼일동(기상청)</th></tr>
+        <tr><th rowspan="5"><div class="compass" style="transform: rotate(0deg);"><div></div><div></div></div></th><th>풍속</th><td><span>2.4</span> m/s</td></tr>
+        <tr><th>온도</th><td><span>31.4</span> °C</td></tr>
+        <tr><th>강수량</th><td><span>0.0</span> mm</td></tr>
+        <tr><th>미세먼지</th><td><span>36.0</span> μg/m²</td></tr>
+        <tr><th>초미세먼지</th><td><span>16.0</span> μg/m²</td></tr>
+      </table>
+      <table style="left: 10%; top: 65%;">
+        <tr><th colspan="3">주삼동(기상청)</th></tr>
+        <tr><th rowspan="5"><div class="compass" style="transform: rotate(30deg);"><div></div><div></div></div></th><th>풍속</th><td><span>3.7</span> m/s</td></tr>
+        <tr><th>온도</th><td><span>30.4</span> °C</td></tr>
+        <tr><th>강수량</th><td><span>0.0</span> mm</td></tr>
+        <tr><th>미세먼지</th><td><span>39.0</span> μg/m²</td></tr>
+        <tr><th>초미세먼지</th><td><span>16.0</span> μg/m²</td></tr>
+      </table>
+    </div>
+    <img src="../static/images/위성지도.png" th:src="@{./images/위성지도.png}" alt="위성지도">
+  </div>
+</div>
+</body>
+</html>
